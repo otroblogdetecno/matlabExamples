@@ -60,7 +60,7 @@ IB2=1-IB1; %invertir
 IB1=IB2;
 
 %% Mostrar imagen original
-imshow(Iorig)
+imshow(IOrig)
 
 %% Etiquetado de áreas conectadas, se necesita una imagen binaria
 [L Ne]=bwlabel(IB1); %en L los objetos y en Ne= números de áreas etiquetadas
@@ -108,8 +108,8 @@ figure; imshow(IB1)
 
 %% Mostrar características geométricas
 % Se recorre de principio a fin las propiedades obtenidas
-fprintf('       N#;      Area;  Perimetro;  Redondez;Excentricidad; Centroide X; Centroide Y \n');
+fprintf('       N#;      Area;  Perimetro;  Redondez;Excentricidad; Centroide X; Centroide Y; \n');
 for n=1:size(propiedades,1)
     redondez=(4*propiedades(n).Area*pi)/(propiedades(n).Perimeter^2); %fórmula de redondez de objetos
-    fprintf('%10.2i; %10.2i; %10.2f; %10.4f; %10.4f; %10.2f; %10.2f\n', n,propiedades(n).Area, propiedades(n).Perimeter, redondez,propiedades(n).Eccentricity, propiedades(n).Centroid(:,1), propiedades(n).Centroid(:,2));
+    fprintf('%10.2i; %10.2i; %10.2f; %10.4f; %10.4f; %10.2f; %10.2f; \n', n,propiedades(n).Area, propiedades(n).Perimeter, redondez,propiedades(n).Eccentricity, propiedades(n).Centroid(:,1), propiedades(n).Centroid(:,2));
 end
