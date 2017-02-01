@@ -1,4 +1,4 @@
-function [ output_args ] = PrincipalProcesarImagen( corrida, pathPrincipal, pathEntrada, pathConfiguracion, pathAplicacion, pathResultados, banderaCalibracion, banderaRotar, nombreImagenP, archivoConfiguracion, archivoVector )
+function [ output_args ] = PrincipalProcesarImagen( corrida, pathPrincipal, pathEntrada, pathConfiguracion, pathAplicacion, pathResultados, banderaCalibracion, banderaRotar, nombreImagenP, archivoConfiguracion, archivoCalibracion, archivoVector )
 %Proceso completo que se realiza por cada fotografia de entrada
 % -----------------------------------------------------------------------
 
@@ -136,18 +136,6 @@ recortarImagen(imagenInicial, banderaRotar, nombreImagenRecorte3, Cuadro3_lineaG
 %Recuadro 4 derecha
 recortarImagen(imagenInicial, banderaRotar, nombreImagenRecorte4, Cuadro4_lineaGuiaInicialColumna, Cuadro4_lineaGuiaInicialFila, Cuadro4_espacioFila, Cuadro4_espacioColumna);
 
-
-if(banderaCalibracion==NOCALIBRADO)
-    % ---- Si está calibrado ----
-    fprintf('Aplicando calibración y recortes  --> \n');    
-    
-    figure('name', 'Imagen Original');imshow(IOrig);
-    figure('name', 'Vistas');
-        subplot(2,2,1);imshow(nombreImagenRecorte1);
-        subplot(2,2,2);imshow(nombreImagenRecorte2);
-        subplot(2,2,3);imshow(nombreImagenRecorte3);
-        subplot(2,2,4);imshow(nombreImagenRecorte4);    
-else
 %% Aplicando operaciones morfologicas
 fprintf('Aplicando operaciones morfologicas --> \n');
 operacionesMorfologicas(nombreImagenRecorte1,nombreImagenSilueta1);
@@ -171,15 +159,28 @@ removerFondo4(nombreImagenRecorte3, nombreImagenSiluetaN3, nombreImagenRemovida3
 removerFondo4(nombreImagenRecorte4, nombreImagenSiluetaN4, nombreImagenRemovida4);
 
 
+
+if(banderaCalibracion==NOCALIBRADO)
+    % ---- Si NO está calibrado ----
+
+else
+
 %% Extraccion de caracteristicas
+pixelmm=lecturaConfiguracion('pixelLineal', archivoCalibracion);
+pixelCuadrado=lecturaConfiguracion('pixelCuadrado', archivoCalibracion);
+
 fprintf('Extraccion de características --> \n');
 [ sumaArea, redondez, diametro, ejeMayor, ejeMenor, finalRojo, finalVerde, finalAzul ] = extraccionCaracteristicas( nombreImagenRemovida1, nombreImagenRemovida2, nombreImagenRemovida3, nombreImagenRemovida4, nombreImagenSiluetaN1, nombreImagenSiluetaN2, nombreImagenSiluetaN3, nombreImagenSiluetaN4);
 
-fprintf('%s; %10.2i; %10.4f; %10.4f; %10.4f; %10.4f; %3i; %3i; %3i; \n',imagenInicial, sumaArea, redondez, diametro, ejeMayor, ejeMenor, finalRojo, finalVerde, finalAzul);
+% Cálculo para unidades de medida
+diametromm=diametro*pixelmm;
+sumaAreamm=sumaArea*pixelCuadrado;
+
+fprintf('%s; %10.4f; %10.2i; %10.4f; %10.4f; %10.4f; %10.4f; %10.4f; %10.4f; %10.4f; %3i; %3i; %3i; \n',imagenInicial, pixelmm, sumaArea, sumaAreamm, redondez, diametro, diametromm, ejeMayor, ejeMenor, finalRojo, finalVerde, finalAzul);
 
 
 %% Guardado en archivo
-fila=sprintf('%s; %10.2i; %10.4f; %10.4f; %10.4f; %10.4f; %3i; %3i; %3i;',imagenInicial, sumaArea, redondez, diametro, ejeMayor, ejeMenor, finalRojo, finalVerde, finalAzul);
+fila=sprintf('%s; %10.4f; %10.2i; %10.4f; %10.4f; %10.4f; %10.4f; %10.4f; %10.4f; %10.4f; %3i; %3i; %3i; \n',imagenInicial, pixelmm, sumaArea, sumaAreamm, redondez, diametro, diametromm, ejeMayor, ejeMenor, finalRojo, finalVerde, finalAzul);
 guardarArchivoVector( archivoVector, fila)
 
     % ---- fin calibrado ----

@@ -1,5 +1,6 @@
+function [output_args]=calibracion(pathPrincipal, pathCalibracion, nombreImagenP)
 %% calibracion de valores
-clc; clear all; close all;
+%clc; clear all; close all;
 
 
 areaMedir=0.0;
@@ -12,10 +13,11 @@ equivalencia1mm=0.0;
 tamano=500;
 
 %imagen entrada 
-pathPrincipal='/home/usuario/ml/'; 
-pathAplicacion=strcat(pathPrincipal,'tmp/');
- nombreImagenP='verde_con_luz.jpg'; 
- nombreImagenSiluetaN1=strcat(pathAplicacion,nombreImagenP,'_','sN1.jpg');
+%pathPrincipal='/home/usuario/ml/'; 
+%pathAplicacion=strcat(pathPrincipal,'calibration/');
+% nombreImagenP='2017-01-27-160836.jpg'; 
+
+nombreImagenSiluetaN1=strcat(pathCalibracion,nombreImagenP,'_','sN1.jpg');
 
 
 fprintf('------------------------------------------------- \n');
@@ -24,7 +26,7 @@ fprintf('------------------------------------------------- \n');
 
 fprintf('La calibración se realiza en base a una esfera conocida \n');
 
-
+fprintf('Calculando características geométricas desde una imagen \n');
 [nombreImagenSiluetaN1, areaPixeles, redondez, diametro, ejeMayor, ejeMenor]=extraerCaracteristicasGeometricas(nombreImagenSiluetaN1,tamano);
 
 
@@ -54,3 +56,4 @@ fprintf('1 pixel lineal= %f mm\n', equivalencia1mm);
 %Abrir fotografía.
 %Medir características geométricas.
 %Presentar valores.
+end %Fin de la funcion
