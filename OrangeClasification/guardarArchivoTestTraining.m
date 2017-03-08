@@ -1,8 +1,12 @@
-function [ output_args ] = guardarArchivoTestTraining( nombreArchivo, filaAgregar )
+function [ output_args ] = guardarArchivoVector( nombreArchivo, filaAgregar )
+% Guardar archivo vector según la fila a agregar
+% Abre y cierra el archivo agregando al final
+
 
 fileIDTest = fopen(nombreArchivo,'r'); %el hander para saber si existe
 fileID = fopen(nombreArchivo,'a'); %abre el archivo para agregar datos
-  
+    
+
 
 if (fileIDTest==-1)
     %% Es primera vez

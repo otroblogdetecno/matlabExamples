@@ -56,5 +56,3 @@ colorAzul=double(sumaAzul/contadorPixeles);
 
 % -----------------------------------------------------------------------
 end %fin de la funcion
-
-

@@ -172,7 +172,7 @@ pixelmm=lecturaConfiguracion('pixelLineal', archivoCalibracion);
 pixelCuadrado=lecturaConfiguracion('pixelCuadrado', archivoCalibracion);
 
 fprintf('Extraccion de características --> \n');
-[ sumaArea, redondez, diametro, ejeMayor, ejeMenor, finalRojo, finalVerde, finalAzul ] = extraccionCaracteristicas( nombreImagenRemovida1, nombreImagenRemovida2, nombreImagenRemovida3, nombreImagenRemovida4, nombreImagenSiluetaN1, nombreImagenSiluetaN2, nombreImagenSiluetaN3, nombreImagenSiluetaN4);
+[ sumaArea, redondez, diametro, ejeMayor, ejeMenor, finalRojo, finalVerde, finalAzul, finalH, finalS, finalV ] = extraccionCaracteristicas( nombreImagenRemovida1, nombreImagenRemovida2, nombreImagenRemovida3, nombreImagenRemovida4, nombreImagenSiluetaN1, nombreImagenSiluetaN2, nombreImagenSiluetaN3, nombreImagenSiluetaN4);
 
 
 % Cálculo para unidades de medida
@@ -187,9 +187,9 @@ sumaAreamm=sumaArea*pixelCuadrado;
 
 %% Guardado en archivo
 clase='SIN_CLASIFICAR';
-fprintf('%s, %10.4f, %10.2i, %10.4f, %10.4f, %10.4f, %10.4f, %10.4f, %10.4f, %3i, %3i, %3i, %s \n',imagenInicial, pixelmm, sumaArea, sumaAreamm, redondez, diametro, diametromm, ejeMayor, ejeMenor, finalRojo, finalVerde, finalAzul, clase);
+fprintf('%s, %10.4f, %10.2i, %10.4f, %10.4f, %10.4f, %10.4f, %10.4f, %10.4f, %3i, %3i, %3i, %10.4f, %10.4f, %10.4f, %s \n',imagenInicial, pixelmm, sumaArea, sumaAreamm, redondez, diametro, diametromm, ejeMayor, ejeMenor, finalRojo, finalVerde, finalAzul, finalH, finalS, finalV, clase);
 
-fila=sprintf('%s, %10.4f, %10.2i, %10.4f, %10.4f, %10.4f, %10.4f, %10.4f, %10.4f, %3i, %3i, %3i, %s \n',imagenInicial, pixelmm, sumaArea, sumaAreamm, redondez, diametro, diametromm, ejeMayor, ejeMenor, finalRojo, finalVerde, finalAzul, clase);
+fila=sprintf('%s, %10.4f, %10.2i, %10.4f, %10.4f, %10.4f, %10.4f, %10.4f, %10.4f, %3i, %3i, %3i, %10.4f, %10.4f, %10.4f, %s \n',imagenInicial, pixelmm, sumaArea, sumaAreamm, redondez, diametro, diametromm, ejeMayor, ejeMenor, finalRojo, finalVerde, finalAzul, finalH, finalS, finalV, clase);
 
 
 %(',,,,,,,,,,,, %3i, \n'
