@@ -52,6 +52,9 @@ proporcionTraining=input('INGRESE EL PORCENTAGE PARA TRAINING:');
 % bucle para repetir pruebas
 for(prueba=1:1:100)
 %% 
+fprintf('-----------------------------------\n');
+fprintf('PRUEBA # %i \n',prueba);
+fprintf('-----------------------------------\n');
 dividirConjuntos( proporcionTraining, pathPrincipal, nombreArchivoSetCompleto, nombreArchivoTraining, nombreArchivoTest);
 
 
