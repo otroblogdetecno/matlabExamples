@@ -14,7 +14,7 @@ function [] = dividirConjuntos( proporcionTraining, pathPrincipal, nombreArchivo
 % nombreArchivoTraining='archivoSetTraining.csv';
 % nombreArchivoTest='archivoSetTest.csv';
 
-formatSpec='%s%f%f%f%f%f%f%f%f%f%f%f%f%f%f%s'; %formato del archivo a leer
+formatSpec='%s%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%s%s'; %formato del archivo a leer
 fileHandlerSetCompleto=strcat(pathResultados,nombreArchivoSetCompleto); 
 fileHandlerTraining=strcat(pathResultados,nombreArchivoTraining); %handle para conjunto de entrenamiento
 fileHandlerTest=strcat(pathResultados,nombreArchivoTest); %handle para conjunto de prueba
