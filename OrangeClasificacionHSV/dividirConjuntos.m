@@ -35,8 +35,8 @@ TotalFilasTest=0;
 %Al menos 1porciento debe quedar para test
 if(proporcionTraining<=99)
     proporcionTest=100-proporcionTraining; 
-    TotalFilasTraining=int16((TotalFilas*proporcionTraining)/100);
-    TotalFilasTest=int16((TotalFilas*proporcionTest)/100);
+    TotalFilasTraining=floor((TotalFilas*proporcionTraining)/100);
+    TotalFilasTest=floor((TotalFilas*proporcionTest)/100);
         
     fprintf('Proporcion Training=%3.2f \n',proporcionTraining);
     fprintf('Proporcion Test=%3.2f \n',proporcionTest);    

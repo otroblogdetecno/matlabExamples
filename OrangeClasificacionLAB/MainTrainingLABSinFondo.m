@@ -29,10 +29,8 @@ nombreImagenP='117.jpg';
  pathConfiguracion=strcat(pathPrincipal,'conf/');
  pathResultados=strcat(pathPrincipal,'output/clasLAB/');
  
- %pathEntradaAprender=strcat(pathPrincipal,'inputToLearn/');
- 
- pathEntradaAprender=strcat(pathPrincipal,'noreconocidos/MANCHADOSexp/'); 
- pathAplicacionAprender=strcat(pathPrincipal,'noreconocidos/MANCHADOSexp/segFondo/');
+ pathEntradaAprender=strcat(pathPrincipal,'inputToLearnSF/'); 
+ pathAplicacionAprender=strcat(pathPrincipal,'tmpToLearnLABSF/'); 
  
 
  
@@ -52,16 +50,13 @@ nombreImagenSiluetaN4=strcat(pathAplicacionAprender,nombreImagenP,'_','sN4.jpg')
 %% Nombres de archivos 
  archivoConfiguracion=strcat(pathConfiguracion,'20170207configuracion.xml');
  archivoCalibracion=strcat(pathConfiguracion,'20170207calibracion.xml');
- archivoVector=strcat(pathResultados,'archivoLABSinFondo.csv');
+ archivoVector=strcat(pathResultados,'aLABSF.csv');
 
 
 
 
 %carga del listado de nombres
 listado=dir(strcat(pathEntradaAprender,'*.jpg'));
-
-
- 
 
 %% lectura en forma de bach del directorio de la cámara
 for n=1:size(listado)

@@ -8,6 +8,7 @@ function [ output_args ] = recortarImagen(imagenNombreRecortar, bRotar, imagenNo
 
 %% Lectura de la imagen
 IRecorte=imread(imagenNombreRecortar);
+IRecorte(:,:,3)=0; % sacar el canal azul que no aporta
 %% Rotacion de la imagen
 if(bRotar==1)
     IRecorteTemp = imrotate(IRecorte,180); %rotar la imagen

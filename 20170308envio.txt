@@ -1,0 +1,145 @@
+* Este es un caso donde el azar determinao que todas las muestras a clasificar sean de la clase
+pequena.
+
+INGRESE EL PORCENTAGE PARA TRAINING:90
+Proporcion Training=90.00 
+Proporcion Test=10.00 
+Total Filas=207 
+Total Filas Training=186 
+Total Filas Test=21 
+Elegir 21 filas al azar para Test sin reemplazo 
+Entrenando clasificador 
+Resultados 
+-----------
+ clas.software                  |
+ pequeno  | mediana  | grande   | clas.experto|
+        21|         0|         0| pequeno     |
+         0|         0|         0| mediana     |
+         0|         0|         0| grande      |
+Clase=1, precision=1.000000, sensibilidad=1.000000 especificidad=NaN
+Clase=2, precision=NaN, sensibilidad=NaN especificidad=1.000000
+Clase=3, precision=NaN, sensibilidad=NaN especificidad=1.000000
+
+
+
+* En este caso, no existen elementos de la clase grande, por eso existen valores NaN
+
+INGRESE EL PORCENTAGE PARA TRAINING:80
+Proporcion Training=80.00 
+Proporcion Test=20.00 
+Total Filas=207 
+Total Filas Training=166 
+Total Filas Test=41 
+Elegir 41 filas al azar para Test sin reemplazo 
+Entrenando clasificador 
+/home/usuario/ml/inputToLearn/020.jpg, Diametro = 67.021900, ce= mediana cs=> pequena 
+Resultados 
+-----------
+ clas.software                  |
+ pequeno  | mediana  | grande   | clas.experto|
+        38|         0|         0| pequeno     |
+         1|         2|         0| mediana     |
+         0|         0|         0| grande      |
+Clase=1, precision=0.974359, sensibilidad=1.000000 especificidad=0.666667
+Clase=2, precision=1.000000, sensibilidad=0.666667 especificidad=1.000000
+Clase=3, precision=NaN, sensibilidad=NaN especificidad=1.000000
+
+
+* No se registran muestras de la clase grande.
+
+INGRESE EL PORCENTAGE PARA TRAINING:70
+Proporcion Training=70.00 
+Proporcion Test=30.00 
+Total Filas=207 
+Total Filas Training=145 
+Total Filas Test=62 
+Elegir 62 filas al azar para Test sin reemplazo 
+Entrenando clasificador 
+/home/usuario/ml/inputToLearn/092.jpg, Diametro = 66.913300, ce= pequena cs=> mediana 
+/home/usuario/ml/inputToLearn/142.jpg, Diametro = 66.869800, ce= pequena cs=> mediana 
+Resultados 
+-----------
+ clas.software                  |
+ pequeno  | mediana  | grande   | clas.experto|
+        47|         2|         0| pequeno     |
+         0|        13|         0| mediana     |
+         0|         0|         0| grande      |
+Clase=1, precision=1.000000, sensibilidad=0.959184 especificidad=1.000000
+Clase=2, precision=0.866667, sensibilidad=1.000000 especificidad=0.959184
+Clase=3, precision=NaN, sensibilidad=NaN especificidad=1.000000
+
+
+INGRESE EL PORCENTAGE PARA TRAINING:60
+Proporcion Training=60.00 
+Proporcion Test=40.00 
+Total Filas=207 
+Total Filas Training=124 
+Total Filas Test=83 
+Elegir 83 filas al azar para Test sin reemplazo 
+Entrenando clasificador 
+Resultados 
+-----------
+ clas.software                  |
+ pequeno  | mediana  | grande   | clas.experto|
+        45|         0|         0| pequeno     |
+         0|        35|         0| mediana     |
+         0|         0|         3| grande      |
+Clase=1, precision=1.000000, sensibilidad=1.000000 especificidad=1.000000
+Clase=2, precision=1.000000, sensibilidad=1.000000 especificidad=1.000000
+Clase=3, precision=1.000000, sensibilidad=1.000000 especificidad=1.000000
+
+
+INGRESE EL PORCENTAGE PARA TRAINING:60
+Proporcion Training=60.00 
+Proporcion Test=40.00 
+Total Filas=207 
+Total Filas Training=124 
+Total Filas Test=83 
+Elegir 83 filas al azar para Test sin reemplazo 
+Entrenando clasificador 
+/home/usuario/ml/inputToLearn/196.jpg, Diametro = 67.194300, ce= mediana cs=> pequena 
+/home/usuario/ml/inputToLearn/124.jpg, Diametro = 67.023100, ce= mediana cs=> pequena 
+Resultados 
+-----------
+ clas.software                  |
+ pequeno  | mediana  | grande   | clas.experto|
+        45|         0|         0| pequeno     |
+         2|        33|         0| mediana     |
+         0|         0|         3| grande      |
+Clase=1, precision=0.957447, sensibilidad=1.000000 especificidad=0.947368
+Clase=2, precision=1.000000, sensibilidad=0.942857 especificidad=1.000000
+Clase=3, precision=1.000000, sensibilidad=1.000000 especificidad=1.000000
+
+
+
+
+
+INGRESE EL PORCENTAGE PARA TRAINING:50
+Proporcion Training=50.00 
+Proporcion Test=50.00 
+Total Filas=207 
+Total Filas Training=104 
+Total Filas Test=104 
+Elegir 104 filas al azar para Test sin reemplazo 
+Entrenando clasificador 
+/home/usuario/ml/inputToLearn/142.jpg, Diametro = 66.869800, ce= pequena cs=> mediana 
+/home/usuario/ml/inputToLearn/086.jpg, Diametro = 71.180500, ce= mediana cs=> grande 
+/home/usuario/ml/inputToLearn/081.jpg, Diametro = 71.218200, ce= mediana cs=> grande 
+/home/usuario/ml/inputToLearn/092.jpg, Diametro = 66.913300, ce= pequena cs=> mediana 
+/home/usuario/ml/inputToLearn/161.jpg, Diametro = 66.861800, ce= pequena cs=> mediana 
+Resultados 
+-----------
+ clas.software                  |
+ pequeno  | mediana  | grande   | clas.experto|
+        39|         3|         0| pequeno     |
+         0|        39|         2| mediana     |
+         0|         0|        21| grande      |
+Clase=1, precision=1.000000, sensibilidad=0.928571 especificidad=1.000000
+Clase=2, precision=0.928571, sensibilidad=0.951220 especificidad=0.952381
+Clase=3, precision=0.913043, sensibilidad=1.000000 especificidad=0.975904
+
+
+matrizResultados=[42 2 0;
+0 37 0;
+0 2 21]
+

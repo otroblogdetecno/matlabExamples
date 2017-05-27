@@ -43,7 +43,7 @@
 %% Ajuste de parámetros iniciales
 clc; clear all; close all;
 
-imagenInicial='objetos1.png';
+imagenInicial='ultima2.jpg';
 tamanoAreaBorrar=1000; %tamano en pixeles de las areas a borrar
 %% Lectura de la imagen
 IOrig=imread(imagenInicial);
